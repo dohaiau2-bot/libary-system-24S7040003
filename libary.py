@@ -1,45 +1,5 @@
-# library.py - Final after merging features
-
+# Global list
 library = []
-
-def add_book():
-    title = input("Enter book title: ").strip()
-    author = input("Enter author name: ").strip()
-
-    book = {
-        "title": title,
-        "author": author,
-        "is_available": True
-    }
-
-    library.append(book)
-    print("Book added successfully.")
-
-def view_books():
-    if not library:
-        print("No books in library.")
-        return
-
-    print("\n--- ALL BOOKS ---")
-    for i, book in enumerate(library, start=1):
-        status = "Available" if book.get("is_available", True) else "Not Available"
-        print(f"{i}. Title: {book['title']} | Author: {book['author']} | {status}")
-
-def search_book():
-    query = input("Enter keyword to search: ").strip().lower()
-    if not query:
-        print("Empty query.")
-        return
-
-    found = False
-    for i, book in enumerate(library, start=1):
-        if query in book["title"].lower():
-            found = True
-            status = "Available" if book.get("is_available", True) else "Not Available"
-            print(f"{i}. Title: {book['title']} | Author: {book['author']} | {status}")
-
-    if not found:
-        print("No matching books found.")
 
 def main():
     while True:
@@ -52,16 +12,16 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            add_book()
+            print("Add book feature not implemented yet.")
         elif choice == '2':
-            view_books()
+            print("View books feature not implemented yet.")
         elif choice == '3':
-            search_book()
+            print("Search feature not implemented yet.")
         elif choice == '4':
             print("Exiting program.")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Try again.")
 
 if __name__ == "__main__":
     main()
